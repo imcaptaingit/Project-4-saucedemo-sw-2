@@ -27,6 +27,7 @@ public class LoginTest extends BaseTest {
         driver.findElement(By.id("login-button")).click();
         String expected = "Products";
         String actual = driver.findElement(By.xpath("//span[text() = 'Products']")).getText();
+        Assert.assertEquals(expected,actual);
     }
 
     @Test
@@ -38,7 +39,7 @@ public class LoginTest extends BaseTest {
         List<WebElement> products = driver.findElements(By.xpath("//div[@class = 'inventory_item']"));
         int expected = 6;
         int actual = products.size();
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @After
